@@ -1,0 +1,62 @@
+1. docker images can be created via 4 ways 
+   a. pull it from docker hub( hub.docker.com)
+   b. build it from docker file 
+   c. using commit from container 
+   d. by loading saved images 
+2. docker images is a read only template contains command and instructions to run an application( base images , env variables , install dependicies,system tools etc)
+3. running instances of an image is called container 
+4. [Host OS]->[BASE OS Layer like alpine ,ubantu]--> [lib/binaries/dependicies]-->[application code/configuration]
+5. base layer has minimal operating system 
+6. (base layer --> dependicies layer --> application code layer --> configuration layer)
+7. all layer coming together will create an running env of our application
+***-----------=============================================================***********
+  commands :->
+    1. docker image ls :-> list out all images
+    2. docker image pull alpine :-> will pull alpine image from the docker hub 
+    3. if we want to work with image then use docker image and if we want to work with docker container then use docker container
+    4. we can mention the version number by using : in docker iamge pull command 
+    5. ubantu iso size is 5.6 gb and in image size is 28 mb ( see the differances)
+    6. docker image pull nginx:alpine :-> we are pulling nginx which is alpine based
+    7. create container :-> docker container run -i -t --name c1 alpine ash 
+        explanation :->
+          1. docker is cli command via docker we are interacting with docker client 
+          2. container is the resource which we want to interact
+          3. run is the command 
+          4. -i :-> is interactive mode 
+          5. -t :-> allocate pseduo terminal (attach terminal with the container terminal)
+          6. --name :-> container name 
+          7. image name 
+          8. program ash (alpine sh terminal) :-> this is alpine shell or command 
+    8. find all running container :-> docker container ls 
+       to find all either running/ killed/exited container user :-> docker container ls -a 
+    9. docker container ls :-> container_id(hexadecimal number ) , iamge from which is it built , commnad (default given while doing container run ),
+                               created , status , ports,container_name 
+    10. to restart stopped contianer :=> docker container start container_id 
+        but issue is that how we will go inside the continer since it is stopped 
+        docker container attach c1 ( it will work once we start the container)
+    11. stop the container :=>
+         docker container stop container_id 
+    12. docker ps / docker ps -a is same as docker container ls / docker container ls -a 
+    13. to reove container :->
+         docker container rm container_id (but the container must not be in running state)
+    14. docker cotainer run -it --name c4 image_name command (if image is not locally present then it will pull it from hub.docker.com)
+    15. if we want to come out of a running container use :-> ctrl +d (it will stop the container and command return to host cmd line)
+        if we want to come out of container and make sure it is keep running the use :-> ctrl + p and then ctrl + q 
+               note :-> this will not kill the command but the host cmd will be returned and user will come out of container cmd .
+    16. ping command is used to connect another conatiner from another container and ifconfig is mainly used   to find the ip 
+      
+
+
+
+
+      
+
+
+
+
+
+
+
+
+      
+      
