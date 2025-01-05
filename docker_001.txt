@@ -1,0 +1,18 @@
+1. virtualization vs hypervisor vs docker
+   --> [hardware]-->[os]-->[virtualization software like virtualbox/vmware]-> [VMss]
+   --> [hardware]-->[hypervisor]--> [VMsss]
+   --> [hardware]-->[host os] --> [docker software] -->[Containers] (lightweight virtualization is achived]
+   --> one is software and another is hardware component
+   --> if we install 2 o.s then on boot time either one of os we can use 
+   --> in canse of virtualization software if host os is corrupt then we cannot access vms
+   --> hypervisor is directly installed on software 
+   --> vm will have complete os and required max of unwanted resources, in vms , kernals , binaries are also gets installed
+2. docker is opensource software used for containerlization process .containers are created from docker images .
+3. containers uses host kernals and only we need binaries ( if we want to run python then we just need python binaries)
+4. images are blueprint to create container.
+5. [hardware]-->[os]->[docker]->[binaries/libray]--> [application]
+6. virtualization is heavy duty virtualization and docker is called light weight virtualization
+7. vms gets created from iso.
+8. A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly(running instance of image)
+9. via docker we can achive microservices model too.
+10. docker --version (to find if docker is installed or not)
